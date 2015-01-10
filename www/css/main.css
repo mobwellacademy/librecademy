@@ -1,0 +1,18 @@
+
+body {
+		background-image: url("../res/bkg.png");
+}
+
+.container {
+	background: #FFFFFF;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.iconsfunc {
+	padding-right: 10px;
+}
