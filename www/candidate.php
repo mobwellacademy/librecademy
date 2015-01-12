@@ -10,7 +10,7 @@
 
 		<!-- Bootstrap -->
 		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="css/main.css" rel="stylesheet">
+		<link href="css/candidate.css" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/3.1.3/css/jasny-bootstrap.min.css">
 		<link rel="stylesheet" href="js/dialCodes/build/css/intlTelInput.css">

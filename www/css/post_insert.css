@@ -1,0 +1,9 @@
+.inserttitle {
+	border-bottom: 1px black;
+}
+
+.insertbody {
+	border: 1px dashed #DCDCDC;
+</*	width:100%; */
+	height:100px;
+}

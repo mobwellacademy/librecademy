@@ -1,0 +1,27 @@
+
+html {
+	background-color: #8DC8FF; 
+}
+
+.header {
+	background-attachment: scroll;
+	background-image: url("../res/img/bkg_index.jpg");
+	background-position: center center;
+	background-size: cover;
+	color: #fff;
+	height: 500px;
+}
+
+.container {
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.iconsfunc {
+	padding-right: 10px;
+}

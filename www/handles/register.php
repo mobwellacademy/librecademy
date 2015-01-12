@@ -5,6 +5,9 @@ $con = connectDb();
 
 $salt = $_REQUEST['salt'];
 
+function fix(&$item, $key) { $item = strip_tags($item); }
+array_walk($_REQUEST, 'fix');
+
 $stmt = $con->prepare("UPDATE user SET name=:name, login=:login, password=:password, email=:email, photo=:photo, phone1=:phone1, phone2=:phone2, skype=:skype WHERE sal=:salt;");
 //$stmt = $con->prepare("UPDATE user SET name=:name, login=:login, password=:password, email=:email, photo=:photo, phone1=:phone1, phone2=:phone2, skype=:skype WHERE sal=:salt;");
 

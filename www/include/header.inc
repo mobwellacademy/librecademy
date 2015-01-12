@@ -40,9 +40,10 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="<?php echo $sess; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_session.png" /> Session</a></li>
-            <li class="<?php echo $codeyard; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_code.png" /> CodeYard</a></li>
-            <li class="<?php echo $res/imgources; ?>"><a href="./"><img class"iconsfunc" src="res/img/func_res.png" /> resources</a></li>
+            <li class="<?php echo $sess; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_session.png" />&nbsp;Session</a></li>
+            <li class="<?php echo $codeyard; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_code.png" />&nbsp;CodeYard</a></li>
+            <li class="<?php echo $resources; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Resources</a></li>
+            <li class="<?php echo $forum; ?>"><a href="forum.php"><img class"iconsfunc" src="res/img/func_forum.png" />&nbsp;Forum</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
