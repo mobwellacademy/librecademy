@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS post (
-	id_post		INT,
+	id_post		INT AUTO_INCREMENT,
 	id_parent	INT,
 	id_user		INT,
 	title		TEXT,
@@ -30,7 +30,7 @@ CREATE TRIGGER `filedate` BEFORE INSERT ON `files` FOR EACH ROW SET NEW.uploadin
 
 
 CREATE TABLE IF NOT EXISTS post_files (
-	id_file		INT,
+	id_file		INT AUTO_INCREMENT,
 	id_post		INT,
 	PRIMARY KEY(id_file, id_post),
 	FOREIGN KEY fkpfiles (id_file) REFERENCES files(id_file) ON DELETE CASCADE,

@@ -11,6 +11,7 @@
 
 		<!-- Bootstrap -->
 		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
 
 		<!-- HTML5 shim and res/imgpond.js for IE8 support of HTML5 elements and media queries -->
@@ -32,7 +33,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="img img-responsive pull-left" src="res/img/logo.png" style="height: auto; width:30px; margin-right: 10px;">School Master - learning 2.0</a>
+          <a class="navbar-brand" href="#"><img class="img img-responsive pull-left" src="res/img/logo.png" style="height: auto; width:30px; margin-right: 10px;">Librecademy - learning 2.0</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">

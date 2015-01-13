@@ -1,29 +1,27 @@
 <link rel="stylesheet" href="css/post_insert.css" type="text/css">
 <script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
-<script type="text/javascript">
-tinymce.init({
-    selector: "h4.editable",
-    inline: true,
-    toolbar: "undo redo",
-    menubar: false
-});
-
-tinymce.init({
-    selector: "div.editable",
-    inline: true,
-    plugins: [
-        "advlist autolink lists link image charmap print preview anchor",
-        "searchreplace visualblocks code fullscreen",
-        "insertdatetime media table contextmenu paste"
-    ],
-    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-});
-</script>
+<script type="text/javascript" src="js/post.js"></script>
 
 <div >
-<h4 class="editable text-muted inserttitle">Insert Title</h4>
-<div class="editable insertbody col-md-11">
-Write something about it...
+	<!-- <h4 class="editable text-muted inserttitle">Insert Title</h4> -->
+	<div id="msgContent" class="editable insertbody ">
+	<span class="text-muted">Write something about it...</span>
+	</div>
+	<div class="pull-right">
+	<!--	<span class="bticon glyphicon glyphicon-envelope disabled" aria-hidden="true"></span>
+		<span class="bticon glyphicon glyphicon-thumbs-up enabled" aria-hidden="true"></span>
+		<span class="bticon glyphicon glyphicon-thumbs-down disabled" aria-hidden="true"></span>
+	-->	
+		<span class="bticon fa fa-paper-plane-o fa-2x disabled"></span>
+	</div>
 </div>
-<div class="col-md-1" style="background: blue"></div>
+
+<div class="post col-md-12">
+	<div class="col-md-1">
+		<img class="img img-responsive img-circle img-who" src="res/img/logo.png" />
+	</div>
+	<div class="col-md-11 post-text">
+		<p>O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+		<p class="small post-bottom"><em>publicado por <span class="post-name">Manuel Ant&oacute;nio</span> em <span class"post-time">2015-01-15 15:00</span><em></p>
+	</div>
 </div>

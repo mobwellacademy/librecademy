@@ -5,7 +5,7 @@ $fileprop = pathinfo($_SERVER['SCRIPT_NAME']);
 $configpath = substr($_SERVER['DOCUMENT_ROOT'], 0, -1)."/schoolmaster/www/handles/config.inc";
 include_once $configpath;
 
-function readTable($table, $where) {
+function readTable($table, $where, $orderby) {
 	$con = connectDb();
 
 	$sel = "SELECT * FROM $table ";
@@ -13,18 +13,21 @@ function readTable($table, $where) {
 		$sel .= " WHERE ";
 		$count = 0;
 		foreach($where as $key=>$val) {
-			if (strpos($val, "\"") !==0)
-				$val = "\"$val\"";
-			$sel .= (($count == 0) ? "" : " AND ") . "$key=$val";
+//			if (strpos($val, "\"") !==0)
+//				$val = "\"$val\"";
+			$sel .= (($count == 0) ? "" : " AND ") . "$key $val";
 			$count++;
-		}	
+		}
 	}
 
 	if(isSafeDelete($table))
 		$sel .= " AND deleted is null OR deleted = 0;";
 
+	if ($orderby != null)
+		$sel .= " ORDER BY $orderby";
+
 //   echo $sel;
-//	die($sel);
+	//	die($sel);
 
 	$stmt = $con->prepare($sel);
 	$stmt->execute();
@@ -47,7 +50,7 @@ function insertTable($table, $arvalues) {
 		$count++;
 	}
 	$sel .= ") VALUES ($secpart);";
-//	 echo $sel;
+	 echo $sel;
 	$stmt = $con->prepare($sel);
 	$stmt->execute();
 

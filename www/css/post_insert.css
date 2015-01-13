@@ -7,3 +7,40 @@
 </*	width:100%; */
 	height:100px;
 }
+
+.disabled {
+	color: #C3C3C3;
+}
+
+.enabled {
+	color: #000000;
+}
+
+.bticon {
+	margin:	5px;
+	cursor:	pointer;
+}
+
+
+.post {
+	border-bottom: 1px solid #E6E6E6;
+	border-right: 1px solid #E6E6E6;
+}
+
+.post-text {
+	background: url('../res/img/quotes.png') 0 0 no-repeat;
+	border-left: 2px solid #DCDCDC;
+}
+
+.post-bottom {
+	color: #DCDCDC;
+}
+
+.post-name .post-time {
+	text-color: black;
+}
+
+.img-who {
+	width: 	auto;
+	height:	50px;
+}
