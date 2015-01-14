@@ -2,6 +2,8 @@ var writesomething = '<span class="text-muted">Write something about it...</span
 
 $(function() {
 
+//	$("#corkboard").mCustomScrollbar();
+
 	tinymce.init({
 		selector: "div.editable",
 		inline: true,
@@ -38,6 +40,8 @@ $(function() {
 	);
 */
 	$('.fa-paper-plane-o').click(sendMsg);
+
+	fetchPosts();
 });
 
 
@@ -66,9 +70,39 @@ function sendMsg() {
 		"handles/rest_post.php",
 		{op: 1, ppost: 1, at: '432876ygjh', msg:encodeURI(html)},
 		function(data, stat, jqr) {
-			console.log(stat);
-			console.log(data);
+			var stat = $.parseJSON(data).errcode;
+			if (stat == "200") {
+				console.log(stat);
+				tinymce.activeEditor.setContent(writesomething);
+				fetchPosts();
+			}
+//			console.log(stat);
+//			console.log(data);
 		}
 	);
 	
+}
+
+function fetchPosts() {
+	$.post(
+			"handles/rest_post.php",
+			{op:0,pubtime:0},
+			spreadPosts
+		  );
+}
+
+function spreadPosts(data, stat, jqr) {
+	var datajs = $.parseJSON(data);
+
+	$('#corkboard').html('');
+
+	for (i=0; i < datajs.length; i++){
+		var jobj = datajs[i];
+		var nodepost = $('#post-template').clone();
+		nodepost.attr("id", "");
+		$(nodepost).find('.post-par').html(decodeURI(jobj.description));
+		$(nodepost).find('.post-time').html(jobj.publishedin);
+
+		$('#corkboard').append(nodepost);
+	}
 }

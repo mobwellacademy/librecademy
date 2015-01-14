@@ -9,7 +9,6 @@ case 0: {
 	break;
 }
 case 1 : {
-	var_dump($_REQUEST);
 	insert_new(); break;
 }
 }

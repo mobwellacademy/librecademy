@@ -22,24 +22,44 @@
 }
 
 
+#corkboard {
+	height: 	900px;
+	overflow-y:	scroll;
+
+}
+
 .post {
-	border-bottom: 1px solid #E6E6E6;
-	border-right: 1px solid #E6E6E6;
+	background: 	#F9F9F9;
+	border-bottom: 	1px solid #E6E6E6;
+	border-right: 	1px solid #E6E6E6;
+	margin-top: 	10px;
+}
+
+
+.img-who {
+	margin: 10px;
 }
 
 .post-text {
 	background: url('../res/img/quotes.png') 0 0 no-repeat;
 	border-left: 2px solid #DCDCDC;
+	min-height:		110px;
 }
 
 .post-bottom {
-	color: #DCDCDC;
+	color: #808080;
+	position: absolute;
+	bottom: 0;
+	right: 10;
 }
 
-.post-name .post-time {
-	text-color: black;
+.post-name{
+	color: black;
 }
 
+.post-time {
+	color: black;
+}
 .img-who {
 	width: 	auto;
 	height:	50px;

@@ -1,10 +1,9 @@
 <html>
 	<head>
-		<title>SchoolMaster - Classroom</title>
+		<title>Librecademy</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Bootstrap 101 Template</title>
 
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
