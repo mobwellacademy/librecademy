@@ -14,9 +14,24 @@ case 1 : {
 }
 
 function readPosts() {
-	$posts = readTable("post", array("publishedin"=> ">".$_REQUEST['pubtime']), "publishedin DESC");
+	$pubtime = html_entity_decode($_REQUEST['pubtime']);
+	date_default_timezone_set("UTC");
 
-	echo json_encode($posts);
+	$pubtime = ($pubtime == 0) ? date("Y-m-d H:i:s", time()) : $pubtime; 
+	$posts = readTable("post", array("publishedin"=> "<'$pubtime'"), "publishedin DESC LIMIT 10");
+
+	$posts_js = array();
+	foreach($posts as $val) {
+		$user = readTable("user", array("id_user"=>"=".$val['id_user']));
+		$usr['name'] 	= $user[0]['name'];
+		$usr['active']	= $user[0]['active'];
+		$usr['photo']	= $user[0]['photo'];
+		$val['user']= $usr;
+		$posts_js[] = $val;
+	}
+
+
+	echo json_encode($posts_js);
 }
 
 function insert_new() {
@@ -24,6 +39,7 @@ function insert_new() {
 	$at			= $_REQUEST['at'];
 	$msg		= $_REQUEST['msg'];
 	$id_user = 1;
+
 
 	$res = insertTable("post", array(
 		"id_parent"	=>$id_parent,

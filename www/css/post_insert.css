@@ -23,13 +23,13 @@
 
 
 #corkboard {
-	height: 	900px;
-	overflow-y:	scroll;
-
+	height: 	600px;
+	overflow:	auto;
+	background: 	#F9F9F9;
 }
 
 .post {
-	background: 	#F9F9F9;
+	background: 	#FFFFFF;
 	border-bottom: 	1px solid #E6E6E6;
 	border-right: 	1px solid #E6E6E6;
 	margin-top: 	10px;
