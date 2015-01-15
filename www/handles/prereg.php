@@ -12,6 +12,13 @@
 		move_uploaded_file($tmp_name, "$uploads_dir/$name");
 		$_REQUEST['photo'] = $name;
 	}
+	var_dump($_REQUEST);
+	echo $_REQUEST['password']."\n";
+	echo $_REQUEST['login']."\n";
+	$passwordSave = md5($_REQUEST['password'].strrev($_REQUEST['login']));
+	echo $passwordSave."\n";
+	$_REQUEST['password'] = $passwordSave;
+	var_dump($_REQUEST['password']);
 
 	unset($_REQUEST['myPhoto']);
 

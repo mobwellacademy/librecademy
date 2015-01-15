@@ -40,26 +40,26 @@ function register() {
 				function(data, textstatus, bla) {
 					//                                              console.log(data);
 					var sal = $.parseJSON(data).salt;
-	var subOptions = { 
-		uploadProgress: function(event, position, total, percentComplete) {
-			console.log("Perc.:"+percentComplete);
-			var percentVal = percentComplete + '%';
-			$('.progress-bar').width(percentVal)
-				$('.sr-only').html(percentVal);
-		},
-		success: function(xhr) {
-			/*		$('#myModalLabel').html('Sucesso');
-					$('#save-result').html('Utilizador gravado com sucesso!');
-	*/		var err = $.parseJSON(xhr).errcode;
-			if (err==200){
-				$('#alrt_success').removeClass('hidden');
-			}else
-				alert('An error occurred while saving the user');
+					var subOptions = { 
+						uploadProgress: function(event, position, total, percentComplete) {
+							console.log("Perc.:"+percentComplete);
+							var percentVal = percentComplete + '%';
+							$('.progress-bar').width(percentVal)
+								$('.sr-only').html(percentVal);
+						},
+						success: function(xhr) {
+							/*		$('#myModalLabel').html('Sucesso');
+									$('#save-result').html('Utilizador gravado com sucesso!');
+									*/		var err = $.parseJSON(xhr).errcode;
+							if (err==200){
+								$('#alrt_success').removeClass('hidden');
+							}else
+								alert('An error occurred while saving the user');
 
-		},
-		url : 'handles/prereg.php',
-		data: {phone: $('#phone').intlTelInput("getCleanNumber"), description:$('#description').val(), password: cryptPwd(), las: sal}
-			};
+						},
+						url : 'handles/prereg.php',
+						data: {phone: $('#phone').intlTelInput("getCleanNumber"), description:$('#description').val(), password: cryptPwd(sal), las: sal}
+					};
 					$('#sal').val(sal);
 					$('#prereg').ajaxSubmit(subOptions); 
 				});
@@ -113,6 +113,10 @@ function sizePassword(){
 	return equal;
 }
 
-function cryptPwd() {
-	return md5($('#pwd').val()+$('#sal').val().split("").reverse().join(""));
+function cryptPwd(sal) {
+	console.log($('#pwd').val());
+	console.log(sal.split("").reverse().join(""));
+	console.log(md5($('#pwd').val()+sal.split("").reverse().join("")));
+	return md5($('#pwd').val()+sal.split("").reverse().join(""));
 }
+

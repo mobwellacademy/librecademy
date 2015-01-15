@@ -26,6 +26,7 @@ function readPosts() {
 		$usr['name'] 	= $user[0]['name'];
 		$usr['active']	= $user[0]['active'];
 		$usr['photo']	= $user[0]['photo'];
+		$usr['login']	= $user[0]['login'];
 		$val['user']= $usr;
 		$posts_js[] = $val;
 	}

@@ -1,6 +1,8 @@
-var writesomething = '<span class="text-muted">Write something about it...</span>';
+var writesomething = $('#msgContent').children().first();
 
 $(function() {
+writesomething = $('#msgContent').children().first().html();
+console.log(writesomething);
 
 	tinymce.init({
 		selector: "div.editable",
@@ -21,14 +23,14 @@ $(function() {
 			});
 			editor.on('focus', function(e) {
 				console.log('focus event', e);
-				if (editor.getContent({format: 'text'}).trim() == 'Write something about it...')
+				if (editor.getContent({format: 'text'}).trim() == writesomething)
 						editor.setContent('');
 			});
 			editor.on('blur', function(e) {
 				console.log('deactivate event', e);
 				toggle($('.fa-paper-plane-o'));
 				if (editor.getContent({format: 'text'}).trim() == '')
-					editor.setContent(writesomething);
+					editor.setContent('<span class="text-muted"'+writesomething+'</span>');
 			});
 		}
 	});
@@ -39,13 +41,14 @@ $(function() {
 */
 	$('.fa-paper-plane-o').click(sendMsg);
 
-	    $('#corkboard').bind('scroll', function()
-				{
-					if($(this).scrollTop() + $(this).innerHeight()>=$(this)[0].scrollHeight)
-					{
-						fetchPosts();
-					}
-				});
+	$('#corkboard').bind('scroll', function()
+		{
+			var scrollh = $(this)[0].scrollHeight;
+			if($(this).scrollTop() + $(this).innerHeight()>=scrollh)
+			{
+				fetchPosts();
+			}
+		});
 
 
 		fetchPosts();
@@ -80,9 +83,9 @@ function sendMsg() {
 			var stat = $.parseJSON(data).errcode;
 			if (stat == "200") {
 				console.log(stat);
-				tinymce.activeEditor.setContent(writesomething);
+				tinymce.activeEditor.setContent('<span class="text-muted">'+writesomething+'</span>');
 				$('#corkboard').html('');
-				fetchPosts();
+				setTimeout(fetchPosts, 1000)	
 			}
 		}
 	);
@@ -115,6 +118,7 @@ function spreadPosts(data, stat, jqr) {
 		$(nodepost).find('.post-par').html(decodeURI(jobj.description));
 		$(nodepost).find('.post-time').html(jobj.publishedin);
 		$(nodepost).find('.post-name').html(jobj.user.name);
+		$(nodepost).find('.post-id').html('@'+jobj.user.login);
 
 		$('#corkboard').append(nodepost);
 	}

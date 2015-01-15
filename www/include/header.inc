@@ -8,6 +8,8 @@
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+		<script src="js/util.js"></script>
+
 		<!-- Bootstrap -->
 		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="img img-responsive pull-left" src="res/img/logo.png" style="height: auto; width:30px; margin-right: 10px;">Librecademy - learning 2.0</a>
+          <a class="navbar-brand" href="#"><img class="img img-responsive pull-left" src="res/img/logo.png" style="height: auto; width:30px; margin-right: 10px;">Librecademy</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
