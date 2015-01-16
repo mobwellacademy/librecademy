@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 	<head>
 		<title>Librecademy</title>
@@ -34,18 +35,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><img class="img img-responsive pull-left" src="res/img/logo.png" style="height: auto; width:30px; margin-right: 10px;">Librecademy</a>
+		  <a class="navbar-brand" href="index.php"><img class="img img-responsive img-rounded pull-left" src="<?php if($_SESSION['user'] != null) echo 'res/pub/'.$_SESSION['user']['photo']; else echo 'res/img/logo.png'; ?>" style="height: auto; width:30px; margin-right: 10px;">Librecademy</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
+            <li><a href="prereg.php">Pre-Register</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="<?php echo $sess; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_session.png" />&nbsp;Session</a></li>
             <li class="<?php echo $codeyard; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_code.png" />&nbsp;CodeYard</a></li>
             <li class="<?php echo $resources; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Resources</a></li>
-            <li class="<?php echo $forum; ?>"><a href="forum.php"><img class"iconsfunc" src="res/img/func_forum.png" />&nbsp;Forum</a></li>
+            <li class="<?php echo $forum; ?>"><a href="forum.php"><img class"iconsfunc" src="res/img/func_forum.png" />&nbsp;Wall</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

@@ -18,7 +18,13 @@ function readPosts() {
 	date_default_timezone_set("UTC");
 
 	$pubtime = ($pubtime == 0) ? date("Y-m-d H:i:s", time()) : $pubtime; 
-	$posts = readTable("post", array("publishedin"=> "<'$pubtime'"), "publishedin DESC LIMIT 10");
+	$hash = $_REQUEST['hashtag'];
+	$userat = $_REQUEST['user'];
+	$where['publishedin'] =  "<'$pubtime'";
+	if ($hash != null)
+		$where['description'] = "LIKE '%#$hash%'";
+
+	$posts = readTable("post",$where, "publishedin DESC LIMIT 10");
 
 	$posts_js = array();
 	foreach($posts as $val) {
@@ -39,12 +45,12 @@ function insert_new() {
 	$id_parent 	= $_REQUEST['ppost'];
 	$at			= $_REQUEST['at'];
 	$msg		= $_REQUEST['msg'];
-	$id_user = 1;
+	$user = getUser($at);
 
 
 	$res = insertTable("post", array(
 		"id_parent"	=>$id_parent,
-		"id_user"	=>$id_user,
+		"id_user"	=>$user['id_user'],
 		"description"	=>$msg));
 
 	if ($res)

@@ -53,11 +53,11 @@ function login($phase, $login, $password, $src="1") {
 			$passwd = $arResult[0]['password'];
 			$id_user = $arResult[0]['id_user'];
 			$passRec = md5($_REQUEST['password'].strrev($login));
-			echo $_REQUEST['password']."\n";;
-			echo $login."\n";
+//			echo $_REQUEST['password']."\n";;
+//			echo $login."\n";
 			$passwordSave = md5($_REQUEST['password'].strrev($login));
-			echo $passwordSave."\n";;
-			echo "$login<br/>$passwd<br/>$passRec";
+//			echo $passwordSave."\n";;
+//			echo "$login<br/>$passwd<br/>$passRec";
 			if (strcmp($passwd,$passRec)==0) {
 				// Last Login
 				$lastLogin = date("Y-m-d H:i:s", time());
@@ -79,7 +79,7 @@ function login($phase, $login, $password, $src="1") {
 				$_SESSION['user']	= $user;
 				$arOut = array("activeToken"=>"$avtoken", 
 					"errcode"=>"200", 
-					"user"=>$tblUser[0]['name']
+					"user"=>$user
 				);
 			}	
 			else {

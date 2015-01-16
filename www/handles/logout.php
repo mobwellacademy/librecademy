@@ -27,5 +27,7 @@ function logout($token){
 $errcode= logout($token);
 
 $success = ($errcode ==200) ? 1 : 0;
-header('Location: http://'.$_SERVER['SERVER_NAME']."/mamiga/www/".$self.'?success='.$success);
+
+echo json_encode(array("errcode"=>$errcode));
+
 ?>

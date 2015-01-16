@@ -127,12 +127,12 @@ function isSafeDelete($table) {
 
 function getUser($activetoken) {
 
-	$tok = readTable("active_token", array("token"=>$activetoken,
-							"active"=>true));
+	$tok = readTable("active_token", array("token"=>"='$activetoken'",
+							"active"=>"=true"));
 
 	// $usr = readTable("user", array("id_user"=>"'".$tok[0]['id_user']."'"));
 	if ($tok != null) {
-		$molduser = readTable("molduser", array("id_user"=> $tok[0]['id_user']));
+		$molduser = readTable("user", array("id_user"=>"=".$tok[0]['id_user']));
 		return $molduser[0];
 	}
 	else

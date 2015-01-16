@@ -1,4 +1,5 @@
 var writesomething = $('#msgContent').children().first();
+var freshSearch = false;
 
 $(function() {
 writesomething = $('#msgContent').children().first().html();
@@ -51,7 +52,7 @@ console.log(writesomething);
 		});
 
 
-		fetchPosts();
+		fetchPosts(0);
 });
 
 
@@ -78,12 +79,13 @@ function sendMsg() {
 
 	$.post(
 		"handles/rest_post.php",
-		{op: 1, ppost: 1, at: '432876ygjh', msg:encodeURI(html)},
+		{op: 1, ppost: 1, at: getCookie('at'), msg:encodeURI(html)},
 		function(data, stat, jqr) {
 			var stat = $.parseJSON(data).errcode;
 			if (stat == "200") {
 				console.log(stat);
 				tinymce.activeEditor.setContent('<span class="text-muted">'+writesomething+'</span>');
+//				$('#corkboard').html('<i class="fa fa-spinner fa-spin "></i>');
 				$('#corkboard').html('');
 				setTimeout(fetchPosts, 1000)	
 			}
@@ -92,22 +94,36 @@ function sendMsg() {
 	
 }
 
-function fetchPosts() {
+function fetchPosts(stime) {
 	var lastpubtime =0;
-	
-	if ($('#corkboard').length > 0)
-		lastpubtime = $('.post').last().find('.post-time').text();
+	freshSearch=false;
+	if (stime == null) {
+		if ($('#corkboard').length > 0){
+			lastpubtime = $('.post').last().find('.post-time').text();
+		}
+	}
+	else { 
+		lastpubtime = stime;
+		if (stime==0)
+			freshSearch=true;
+	}
 
-	console.log(lastpubtime);
+
 	$.post(
 			"handles/rest_post.php",
-			{op:0,pubtime:lastpubtime},
+			{op:0,
+				pubtime:lastpubtime, 
+				hashtag:$('#inputHash').val(), 
+				user:$('#inputAt').val() },
 			spreadPosts
 		  );
 }
 
 function spreadPosts(data, stat, jqr) {
 	var datajs = $.parseJSON(data);
+	
+	if (freshSearch)
+		$('#corkboard').html('');
 
 
 	for (i=0; i < datajs.length; i++){
@@ -119,6 +135,13 @@ function spreadPosts(data, stat, jqr) {
 		$(nodepost).find('.post-time').html(jobj.publishedin);
 		$(nodepost).find('.post-name').html(jobj.user.name);
 		$(nodepost).find('.post-id').html('@'+jobj.user.login);
+		var photo = (jobj.user.photo != null && jobj.user.photo.trim() != '') ? 'res/pub/'+jobj.user.photo : 'res/img/logo.png';
+		$(nodepost).find('.circular').attr('src',photo);
+		$(nodepost).find('img').each(function(){
+			if (!$(this).hasClass('img'))
+				$(this).addClass('img');
+				$(this).addClass('img-responsive');
+		});
 
 		$('#corkboard').append(nodepost);
 	}

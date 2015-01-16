@@ -13,10 +13,10 @@
 		$_REQUEST['photo'] = $name;
 	}
 	var_dump($_REQUEST);
-	echo $_REQUEST['password']."\n";
-	echo $_REQUEST['login']."\n";
+//	echo $_REQUEST['password']."\n";
+//	echo $_REQUEST['login']."\n";
 	$passwordSave = md5($_REQUEST['password'].strrev($_REQUEST['login']));
-	echo $passwordSave."\n";
+//	echo $passwordSave."\n";
 	$_REQUEST['password'] = $passwordSave;
 	var_dump($_REQUEST['password']);
 
