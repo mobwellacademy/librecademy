@@ -4,7 +4,7 @@
 <script type="text/javascript" src="js/tinymce/tinymce.min.js"></script>
 <script type="text/javascript" src="js/post.js"></script>
 
-<div id="post-template" class="post col-md-5 col-md-offset-1 col-sm-12 hidden">
+<div id="post-template" class="post col-md-6  col-sm-12 hidden">
 	<div class="col-md-2 col-sm-12">
 		<img class="img img-responsive circular img-who" style="width:50px; height:auto" src="res/img/logo.png" /><br/>
 		<span class="post-id small vcenter"><strong>@dsangui</strong></span>

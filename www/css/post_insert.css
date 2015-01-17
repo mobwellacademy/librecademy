@@ -31,7 +31,8 @@
 .post {
 	background: 	#FFFFFF;
 	border-bottom: 	1px solid #E6E6E6;
-	border-right: 	1px solid #E6E6E6;
+	border-left: 	2px solid #F9F9F9;
+	border-right: 	5px solid #F9F9F9;
 	margin-top:5px;
 	padding:0;
 }

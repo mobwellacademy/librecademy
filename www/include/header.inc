@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start();
+
+if (isset($loginreq) && $loginreq && !isset($_SESSION['user'])) {
+	header("Location: login_please.php");
+exit();
+}
+
+?>
 <html>
 	<head>
 		<title>Librecademy</title>
@@ -44,8 +51,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="<?php echo $sess; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_session.png" />&nbsp;Session</a></li>
-            <li class="<?php echo $codeyard; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_code.png" />&nbsp;CodeYard</a></li>
-            <li class="<?php echo $resources; ?>"><a href="#"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Resources</a></li>
+            <li class="<?php echo $codeyard; ?>"><a href="codeyard.php"><img class"iconsfunc" src="res/img/func_code.png" />&nbsp;CodeYard</a></li>
+            <li class="<?php echo $resources; ?>"><a href="resources.php"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Resources</a></li>
             <li class="<?php echo $forum; ?>"><a href="forum.php"><img class"iconsfunc" src="res/img/func_forum.png" />&nbsp;Wall</a></li>
           </ul>
         </div><!--/.nav-collapse -->

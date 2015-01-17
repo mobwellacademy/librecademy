@@ -24,6 +24,13 @@ function readPosts() {
 	if ($hash != null)
 		$where['description'] = "LIKE '%#$hash%'";
 
+	if (isset($userat) && trim($userat) != '') {
+		$users = readTable("user", array("login"=>"LIKE '$userat%'"));
+		if (count($users) == 1) {
+			$where['id_user'] = "=".$users[0]['id_user'];
+		}
+	}
+
 	$posts = readTable("post",$where, "publishedin DESC LIMIT 10");
 
 	$posts_js = array();
