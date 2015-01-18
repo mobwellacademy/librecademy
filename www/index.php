@@ -3,7 +3,10 @@
 	include_once 'include/header.inc';
 ?>
 <div class="container">
-	<aside id="user_form" class="col-md-3 col-md-offset-9">
+	<section class="col-md-9 fromtop">
+		<iframe src="components/kanboard/index.php?controller=board&controller=app&action=index" width="100%" height="500px"></iframe>
+	</section>
+	<aside id="user_form" class="col-md-3 fromtop">
 		<?php
 			if ($_SESSION['user'] != null) {
 ?>
