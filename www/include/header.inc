@@ -22,6 +22,7 @@ exit();
 		<link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link href="css/main.css" rel="stylesheet">
+		<link href="css/callout.css" rel="stylesheet">
 
 		<!-- HTML5 shim and res/imgpond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: res/imgpond.js doesn't work if you view the page via file:// -->

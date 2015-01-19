@@ -1,17 +1,36 @@
 $().ready(function() {
 
-	$('#prereg').submit(function() { 
+	$('#upuser').submit(function() { 
 		// submit the form 
 		// return false to prevent normal browser submit and page navigation 
 		return false; 
 	});
 
-	$('#prereg').clearForm();
+	$('#upuser').clearForm();
+
+	getUser();
 });
 
 var hasSubmited = false;
 
-function register() {
+function getUser() {
+	var sal = document.getElementById('sal').value;
+
+	$.post(
+		"handles/rest_user.php?s="+sal).
+	done(function(data){
+			var vars = $.parseJSON(data);
+			$('#name').val(vars.name);
+			$('#login').val(vars.login);
+			$('#email').val(vars.mail);
+			$('#description').val(vars.description);
+			$('#img_avatar').attr('src', "res/pub/"+vars.photo);
+			$("#phone").intlTelInput("setNumber", vars.phone);
+		}
+	);
+}
+
+function update() {
 	hasSubmited = true;
 
 	if (!requiredFields()) {
@@ -28,41 +47,30 @@ function register() {
 		$("#pwd").next('.help-block').removeClass('hidden');
 		return;
 	}
-	if (!$('#cb_terms').is(':checked')){
-		$("#noTerms").removeClass('hidden');
-		return;
-	}
 
+	var sal = $('#sal').val();
+	var subOptions = { 
+		uploadProgress: function(event, position, total, percentComplete) {
+			console.log("Perc.:"+percentComplete);
+			var percentVal = percentComplete + '%';
+			$('.progress-bar').width(percentVal)
+				$('.sr-only').html(percentVal);
+		},
+		success: function(xhr) {
+			/*		$('#myModalLabel').html('Sucesso');
+					$('#save-result').html('Utilizador gravado com sucesso!');
+					*/		
+			var err = $.parseJSON(xhr).errcode;
+			if (err==200){
+				$('#alrt_success').removeClass('hidden');
+			}else
+				alert('An error occurred while saving the user');
 
-	$.post(
-			"handles/req_reg.php")
-		.done(
-				function(data, textstatus, bla) {
-					//                                              console.log(data);
-					var sal = $.parseJSON(data).salt;
-					var subOptions = { 
-						uploadProgress: function(event, position, total, percentComplete) {
-							console.log("Perc.:"+percentComplete);
-							var percentVal = percentComplete + '%';
-							$('.progress-bar').width(percentVal)
-								$('.sr-only').html(percentVal);
-						},
-						success: function(xhr) {
-							/*		$('#myModalLabel').html('Sucesso');
-									$('#save-result').html('Utilizador gravado com sucesso!');
-									*/		var err = $.parseJSON(xhr).errcode;
-							if (err==200){
-								$('#alrt_success').removeClass('hidden');
-							}else
-								alert('An error occurred while saving the user');
-
-						},
-						url : 'handles/prereg.php',
-						data: {phone: $('#phone').intlTelInput("getCleanNumber"), description:$('#description').val(), password: cryptPwd(sal), las: sal, img:$('#img_avatar').attr('src')}
-					};
-					$('#sal').val(sal);
-					$('#prereg').ajaxSubmit(subOptions); 
-				});
+		},
+		url : 'handles/prereg.php',
+		data: {phone: $('#phone').intlTelInput("getCleanNumber"), description:$('#description').val(), password: cryptPwd(sal), las: sal, img:$('#img_avatar').attr('src')}
+	};
+	$('#upuser').ajaxSubmit(subOptions); 
 }
 
 function requiredFields() {

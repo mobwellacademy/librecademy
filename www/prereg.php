@@ -62,7 +62,7 @@
 				</div>
 			</div>
 			<div class="col-md-4">
-				<div class="fileinput fileinput-new pull-right" data-provides="fileinput">
+<!--				<div class="fileinput fileinput-new pull-right" data-provides="fileinput">
 					<div class="fileinput-new thumbnail " style="width: 200px; height: 150px;">
 						<img id="img_contact_photo" data-src="holder.js/100%x100%" alt="">
 					</div>
@@ -74,7 +74,8 @@
 						<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a>
 					</div>
 				</div>
-
+-->
+				<?php include_once 'components/avatarpic/avatarpic.php'; ?>
 				<div class="clearfix"></div>
 				<div class="form-group">
 					<label for="email">Email address<span style="color:red"><strong>*</strong></span></label>

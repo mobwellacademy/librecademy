@@ -32,6 +32,13 @@
 			</div>
 		</section>
 <?php }; ?>
+<!--		<section class="news">
+			<h2>News</h2>
+			<div class="col-sm-12">
+			<?php// include_once 'components/post_insert.php' ?>
+			</div>
+		</section>
+-->
 	</aside>
 </div>
 <script type="text/javascript" src="js/md5.js" ></script>
