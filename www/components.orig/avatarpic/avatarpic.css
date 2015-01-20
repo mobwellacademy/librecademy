@@ -1,0 +1,44 @@
+.imageBox
+{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	border:1px solid #aaa;
+	background: #F1F1F1;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	cursor:move;
+	margin-bottom: 20px;
+}
+
+.imageBox .thumbBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 140px;
+	height: 140px;
+	margin-top: -70px;
+	margin-left: -70px;
+	border: 1px solid rgb(102, 102, 102);
+	box-shadow: 0 0 0 1000px rgba(200, 200, 200, 0.5);
+	background: none repeat scroll 0% 0% transparent;
+}
+
+.imageBox .spinner
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	line-height: 400px;
+	background: rgba(0,0,0,0.7);
+}
+
+#img_avatar {
+	cursor: pointer;
+}
