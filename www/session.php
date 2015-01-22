@@ -10,7 +10,7 @@
 		<iframe width="560" height="315" src="//www.youtube.com/embed/hxe8rvyAMVg" frameborder="0" allowfullscreen></iframe>
 		<h3>Slides</h3>
 		<p>Slides are important too, but this way are much more fun! <i class="fa fa-smile-o fa-2x"></i></p>
-		<iframe id="sshow" src="res/docs/session1/imp1.html" ></iframe>
+		<iframe id="sshow" src="res/docs/session1/sess1.html" ></iframe>
 	</div>
 	<div class="col-md-4">
 	</div>

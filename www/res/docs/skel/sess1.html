@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Impress Skel</title>
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+		 <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+		 <link href="../impress-demo.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="impress"> 
+			<div class="step big" data-x="0" data-y="0" data-scale="0.5"> 
+				<h1>Welcome!</h1>
+			</div>
+			<div class="step slide" data-x="1020" data-y="0"> 
+				<h1>Some Android Considerations</h1>
+				<ul>
+					<li>It has <strong>Linux Kernel</strong>, therefore incorrectly is called a Linux distribution</li>
+					<li>The majority of active smartphones are Android</li>
+				</ul>
+			</div>
+			<div class="step" data-x="2040" data-y="0" data-scale="0.3">
+				<img src="img/info-apps2014.jpg" />
+			</div>
+			<div class="step" data-x="3060" data-y="0" >
+				<img src="img/info-games.jpg" />
+			</div>
+			<div class="step slide" data-x="2040" data-y="750" data-scale="0.5">
+				<h2><strong>Quick Reference</strong></h2>
+				<h4>What's needed to make the next Android app, that will rule the world</h4>
+				<ul>
+					<li>Tools
+						<ul>
+							<li><img src="https://d11xdyzr0div58.cloudfront.net/static/vector_tux.864e6cdcc23e.png" width="auto" height="50" />Operating System</li>
+							<li><img src="http://i.utdstc.com/icons/android-studio-.png" width="auto" height="50" />Android Studio</li>
+							<li><img src="http://i.imgur.com/PZZqs.png" width="auto" height="50" />Image maker/Editor</li>
+							<li><img src="http://icons.iconarchive.com/icons/dakirby309/windows-8-metro/256/Other-Share-alt-1-Metro-icon.png" width="auto" height="50" />Social Networks</li>
+						</ul>
+					</li>
+					<li>Programing/Scripting Languages
+					<p class="text-centered" style="margin-top:20px;">
+						<img src="http://vrworld.com/Data/2012_5_25/Oracle-vs-Google-Post-Mortem-The-Judge-Knows-Programming/GOOG_Android_Java_689.jpg" width="120" height="auto"/><big>+</big><img src="http://akrayasolutions.com/wp-content/uploads/2013/08/xml-1.gif" width="120" height="auto"/><big>+</big><img src="http://www.agilearts.nl/wp-content/uploads/2013/03/gradle.png" width="120" height="auto"/>
+					</p>
+					</li>
+			</div>
+			<div class="step" data-x="0" data-y="800" data-rotate="90">
+				<H2>KNOWLEDGE</H2>
+				<img src="http://www.rmmagazine.com/wp-content/uploads/2012/08/brain.jpg" />
+			</div>
+			<div class="step" data-x="-2600" data-y="-800" data-rotate-x="30" data-rotate-y="-60" data-rotate-z="90" data-scale="4">
+				<h2>GREAT QUALITY TEAM</h2>
+				<img src="http://www.renewedcell.com/wp-content/uploads/2014/07/Network-Marketing-5.jpg" width="auto" height="430" />
+			</div>
+			<div class="step" data-x="3800" data-y="0" data-rotate="90">
+				<img src="img/mobwell_logo.png" />
+			</div>
+		</div>
+<!--		<div class="hint">
+			<p>Use a spacebar or arrow keys to navigate</p>
+		</div>
+-->
+		<script>
+if ("ontouchstart" in document.documentElement) {
+	document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+		</script>
+
+
+		<!--		<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js"></script> -->
+		<script src="../../../bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="js/jquery.signalR-1.0.0.js"></script>
+		<script src="js/jquery.signalRamp.js"></script>
+		<script src="js/jquery.impressR.js"></script>
+		<script src="js/impress.js"></script>
+
+		<script>
+$("#impress").impressR({
+proxyName: 'mobwellacademyses1'
+});    
+		</script>
+
+	</body>
+</html>
