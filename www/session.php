@@ -7,7 +7,7 @@
 <div class="container">
 	<h1>Session #1</h1>
 	<div class="col-md-8">
-		<iframe width="560" height="315" src="//www.youtube.com/embed/hxe8rvyAMVg" frameborder="0" allowfullscreen></iframe>
+		<iframe width="420" height="315" src="http://www.youtube.com/embed/UYvpFAC9c_Y" frameborder="0" allowfullscreen></iframe>
 		<h3>Slides</h3>
 		<p>Slides are important too, but this way are much more fun! <i class="fa fa-smile-o fa-2x"></i></p>
 		<iframe id="sshow" src="res/docs/session1/sess1.html" ></iframe>
