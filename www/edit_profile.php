@@ -24,7 +24,8 @@
 				</div>
 				<div class="form-group">
 					<label for="login">Login<span style="color:red"><strong>*</strong></span></label>
-					<input type="text" class="form-control" id="login" name="login" placeholder="Login" onkeyup="requiredFields()" required>
+					<input type="text" class="form-control" id="login" name="login" placeholder="Login" onkeyup="requiredFields()" maxlength="7" required>
+					<span id="helpBlock" class="help-block ">Please, insert 7 characters maximum</span>
 				</div>
 				<div class="form-group has-feedback">
 					<label for="login">Password<span style="color:red"><strong>*</strong></span></label>
