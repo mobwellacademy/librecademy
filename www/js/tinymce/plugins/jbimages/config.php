@@ -38,8 +38,11 @@
 | -------------------------------------------------------------------*/
 
 	
-	$config['img_path'] = '/schoolmaster/www/res/pub'; // Relative to domain name
+	$config['img_path'] = '/res/pub'; // Relative to domain name
+//	$config['img_path'] = '/images'; // Relative to domain name
 	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
+	//	$config['upload_path'] = '/var/www/librecademy/www/res/pub/';
+	
 
 
 /*-------------------------------------------------------------------

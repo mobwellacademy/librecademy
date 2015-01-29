@@ -49,6 +49,7 @@ exit();
           <ul class="nav navbar-nav">
             <li><a href="prereg.php">Pre-Register</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="manage_session.php">Manage Sessions</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li class="<?php echo $sioness; ?>"><a href="session.php"><img class"iconsfunc" src="res/img/func_session.png" />&nbsp;Session</a></li>
