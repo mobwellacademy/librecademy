@@ -2,7 +2,8 @@
 
 $fileprop = pathinfo($_SERVER['SCRIPT_NAME']);
 // $configpath = substr($_SERVER['DOCUMENT_ROOT'], 0, -1).$fileprop['dirname']."/config.inc";
-$configpath = substr($_SERVER['DOCUMENT_ROOT'], 0, -1)."/librecademy/www/handles/config.inc";
+// $configpath = substr($_SERVER['DOCUMENT_ROOT'], 0, -1)."/librecademy/www/handles/config.inc";
+$configpath = $_SERVER['DOCUMENT_ROOT']."/handles/config.inc";
 include_once $configpath;
 
 function readTable($table, $where, $orderby=null) {
