@@ -32,7 +32,7 @@ exit();
 		<![endif]-->
 	</head>
 
-	<body>
+	<body class="body_main">
     <!-- Fixed navbar -->
     <nav class="navbar navbar-default navbar-fixed-top">
       <div class="container">
