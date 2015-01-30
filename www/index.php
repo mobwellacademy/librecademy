@@ -4,7 +4,12 @@
 ?>
 <div class="container">
 	<section class="col-md-9 fromtop">
+		<?php
+			if ($_SESSION['user'] != null) { ?>
 		<iframe src="components/kanboard/index.php?controller=board&controller=app&action=index" width="100%" height="500px"></iframe>
+<?php } else { ?>
+		<img src="res/img/mobacademy_moto.jpg" class="img img-responsive" />
+<?php }; ?>
 	</section>
 	<aside id="user_form" class="col-md-3 fromtop">
 		<?php
