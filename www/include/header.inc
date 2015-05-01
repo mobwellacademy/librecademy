@@ -54,7 +54,7 @@ exit();
           <ul class="nav navbar-nav navbar-right">
             <li class="<?php echo $sioness; ?>"><a href="session.php"><img class"iconsfunc" src="res/img/func_session.png" />&nbsp;Session</a></li>
             <li class="<?php echo $codeyard; ?>"><a href="codeyard.php"><img class"iconsfunc" src="res/img/func_code.png" />&nbsp;CodeYard</a></li>
-            <li class="<?php echo $resources; ?>"><a href="resources.php"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Resources</a></li>
+            <li class="<?php echo $resources; ?>"><a href="resources.php"><img class"iconsfunc" src="res/img/func_res.png" />&nbsp;Drive</a></li>
             <li class="<?php echo $draw; ?>"><a href="drawing.php"><img class"iconsfunc" src="res/img/func_draw.png" />&nbsp;Drawing</a></li>
             <li class="<?php echo $forum; ?>"><a href="forum.php"><img class"iconsfunc" src="res/img/func_forum.png" />&nbsp;Wall</a></li>
           </ul>
